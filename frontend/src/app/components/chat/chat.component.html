@@ -1,0 +1,44 @@
+<div class="chat-container">
+  <div class="chat-window">
+    <div *ngFor="let chat of chatHistory" class="chat-message" [ngClass]="{'user-message': chat.sender === 'user', 'ollama-message': chat.sender === 'ollama'}">
+      <strong *ngIf="chat.sender === 'ollama'">Ollama:</strong>
+      <span>{{ chat.content }}</span>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <mat-form-field class="input-field" appearance="fill">
+      <input matInput [(ngModel)]="message" placeholder="Escribe tu mensaje" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="sendMessage()">
+      Enviar
+    </button>
+  </div>
+
+  <div class="actions">
+    <button mat-icon-button color="primary" (click)="openFileDialog()">
+      <mat-icon>attach_file</mat-icon>
+    </button>
+    <input type="file" hidden #fileInput (change)="handleFileInput($event)" accept=".txt" />
+  
+    <button mat-raised-button color="accent" (click)="summarize()">
+      Resumir
+    </button>
+  
+    <!-- Menú desplegable para seleccionar el idioma -->
+    <mat-form-field appearance="fill" class="language-select">
+      <mat-label>Selecciona idioma</mat-label>
+      <mat-select [(value)]="selectedLanguage">
+        <mat-option *ngFor="let language of languages" [value]="language.code">
+          {{ language.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <button mat-raised-button color="warn" (click)="translate()">
+      Traducir
+    </button>
+  </div>
+  
+</div>

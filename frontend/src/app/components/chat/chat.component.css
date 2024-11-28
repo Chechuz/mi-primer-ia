@@ -1,0 +1,59 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 16px;
+}
+
+.chat-window {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  background-color: #f9f9f9;
+}
+
+.chat-message {
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.user-message {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.ollama-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.input-field {
+  flex: 1;
+  margin-right: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
