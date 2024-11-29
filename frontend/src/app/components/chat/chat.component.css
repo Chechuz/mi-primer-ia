@@ -1,10 +1,32 @@
+.app-container {
+  background-color: #f1f1f1;
+  border-radius: 10%;
+  border: #23095c, 1px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  color: #23095c;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+}
+img{
+  height: 5rem;
+  width: 5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
 .chat-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 16px;
+  padding-bottom: 5rem;
 }
 
 .chat-window {
@@ -13,37 +35,48 @@
   height: 300px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  border-color: black;
   padding: 16px;
   overflow-y: auto;
   margin-bottom: 16px;
   background-color: #f9f9f9;
 }
-
 .chat-message {
-  margin-bottom: 8px;
+  display: flex;
   padding: 8px;
-  border-radius: 8px;
-  max-width: 80%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
 }
 
 .user-message {
-  background-color: #d1ecf1;
-  color: #0c5460;
   align-self: flex-end;
+  background-color: #3f51b5;
+  color: #ffffff;
+  margin-left: auto;
   text-align: right;
 }
 
 .ollama-message {
-  background-color: #f8d7da;
-  color: #721c24;
   align-self: flex-start;
+  background-color: #e0e0e0;
+  color: #000000;
+  margin-right: auto;
   text-align: left;
+}
+
+.message-content {
+  padding: 8px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
 .input-container {
   display: flex;
   align-items: center;
   width: 100%;
+  border-color: black;
   max-width: 600px;
 }
 
@@ -56,4 +89,30 @@
   display: flex;
   gap: 0.8rem;
   justify-content: center;
+  margin-top: 1rem; 
+}
+ button {
+  all: unset; 
+  width: fit-content;
+  height: fit-content;
+  align-self: first baseline;
+  background-color:#dbc6d0;
+  padding: 1rem;
+  border-radius: 15%;
+  border-color: black;
+  border-style: double;
+  font-weight: bolder;
+}
+
+.language-select {
+  width: 200px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin-bottom: 16px;
 }
